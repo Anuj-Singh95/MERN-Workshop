@@ -1,3 +1,4 @@
+                            Day 1
 why html h6 tag is used for if it is samller than normal text
 aside tag
 $nbsp => it is entity used as non breaking space
@@ -12,3 +13,26 @@ target attribute->
 
 
     what happens when you type google.com on browser
+
+*****************************************************************
+                            Day 2
+heading-two : kebab-case
+headingTwo : camelCase
+heading_two: snake_case
+HeadingTwo: PascalCase
+
+
+em is relative unit
+ font-size will be relative to parent but others will be relative to self
+ only fort-size depends on parent
+
+
+min-height
+max-height
+overflow:scroll;
+
+
+selectors
+nth-child
+nth-of-type
+

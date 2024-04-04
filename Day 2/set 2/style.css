@@ -1,0 +1,35 @@
+.btn{
+    display: block;
+    margin: auto;
+    padding: 16px;
+    border: none;
+    font-size: 16px;
+    width: 120px;
+}
+.btn-small{
+    scale: 0.7;
+}
+
+.parent ol{
+    background-color: rebeccapurple;
+}
+
+.parent div ul:nth-child(1){
+    background-color: red;
+}
+
+.parent ul:last-child{
+    background-color: aqua;
+}
+
+.parent ul:last-child li:nth-child(3){
+    background-color: yellow;
+}
+
+/* body>ul:nth-child(2){
+    background-color: aquamarine;
+} */
+
+.parent+ul{
+    background-color: aquamarine;
+}
