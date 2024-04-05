@@ -1,0 +1,32 @@
+.parent{
+    display: grid;
+    grid-template-rows: 50px 75px 50px;
+    /* grid-auto-rows: 50px; */
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(217, 226, 226);
+    /* row-gap: 10px;
+    column-gap: 10px; */
+
+}
+.child{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color:rgb(44, 110, 88);
+}
+
+.menu{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.footer{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
