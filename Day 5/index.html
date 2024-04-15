@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        
+        let student={
+            name:"anuj singh",
+            rollno:10,
+            score:[],
+            summary: function(score){
+                console.log(`name of student is ${this.name} and rollno is ${this.rollno} and scored ${score}`);
+                // this.score.push(score);
+                console.log(this);
+            }
+        }
+        // student.summary();
+        let obj={
+            name:"person",
+            rollno:23
+        }
+        student.summary.call(obj, 345)
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "name": "set2",
+  "version": "1.0.0",
+  "description": "practive",
+  "main": "buffer.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon buffer.js"
+  },
+  "author": "anuj",
+  "license": "ISC"
+}
