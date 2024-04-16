@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        .product-container{
             display: flex;
             flex-wrap: wrap;
         }
@@ -23,6 +23,23 @@
     </style>
 </head>
 <body>
-    __data__
+    <form method="get">
+        <input type="text" placeholder="Search here">
+        <input type="submit">
+    </form>
+    <div></div>
+    <div class="product-container">
+        __data__
+    </div>
+
+
+    <script>
+        document.querySelector("form").addEventListener('submit',(event)=>{
+            event.preventDefault();
+            console.log(event.target[0].value);
+            window.location=`/search?key=${event.target[0].value}`;
+            
+        })
+    </script>
 </body>
 </html>

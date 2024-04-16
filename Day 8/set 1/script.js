@@ -32,7 +32,28 @@ const app = http.createServer((req, res)=>{
     page = page.replace('__data__', card);
     if(pathname=='/home'){
         res.end(page);
-    }else if(pathname=='/product'){
+    }
+    else if(pathname=='/search'){
+        const route = url.parse(req.url);
+        let search=route.query.slice(4, route.query.length);
+        // console.log(search);
+        let pg = fs.readFileSync('./index.html', 'utf-8');
+        let card = '';
+        for(let i=0;i<dataObj.products.length;i++){
+            let s=dataObj.products[i].title.toLowerCase();
+            if( s.includes(search.toLowerCase())){
+                card+=cardTemplate.replace('$link$', dataObj.products[i].images[0]);
+                card=card.replace('$TITLE$', dataObj.products[i].title);
+                card=card.replace('$DESCRIPTION$', dataObj.products[i].description);
+                card=card.replace('$product_link$', `/product?id=${i}`);
+            }
+        }
+        pg = pg.replace('__data__', card);
+
+        res.end(pg);
+
+    }
+    else if(pathname=='/product'){
         const route =url.parse(req.url);
         let id=route.query.slice(3, route.query.length);
         console.log(id);

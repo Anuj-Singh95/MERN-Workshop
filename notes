@@ -53,3 +53,8 @@ validation in js
 
 ****************************
 difference between url  and uri
+
+
+
+**********************************
+window.location is used to hit url in browser
