@@ -1,40 +1,19 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const fsPromises = require("fs/promises");
+const productRouter = require("./routes/productRoute");
+const userRouter = require("./routes/userRoute");
 // const { stringify } = require('querystring');
 app.use(express.json());
-let i = 0;
-app.get("/api/products", async (req, res) => {
-  let data = await fs.readFileSync("./data.json", "utf-8");
-  data = JSON.parse(data);
-  res.json({
-    status: "success",
-    data,
-  });
-});
 
-app.post("/api/products", async (req, res) => {
-  const data = {
-    id: 0,
-    data: req.body,
-  };
-  const db = await fs.readFileSync("./data.json", "utf-8");
-  const arr = JSON.parse(db);
-  const len = arr.length;
-  if (len == 0) {
-    data.id = 1;
-    arr.push(data);
-    // console.log(arr);
-  } else {
-    console.log(arr);
-    data.id = arr[len - 1].id + 1;
-    arr.push(data);
-  }
-  fs.writeFileSync("./data.json", JSON.stringify(arr));
+app.use("/api/products", productRouter);
+app.use("/api/users", userRouter);
 
-  // console.log(db);
-  res.send("work in progress");
-});
+// app.use((req, res, next) => {
+//   const time = new Date().toLocaleString();
+//   fsPromises.appendFile("./log.txt", req.url + "\t");
+// });
 
 app.put("/api/products/:id", async (req, res) => {
   // res.send("work in progress");
